@@ -41,7 +41,8 @@ SafeFinder is committed to making a positive impact by streamlining the process 
 *Mail sent to the authorities when match found*
 
 
-![Screenshot 2024-05-12 232747](https://github.com/alatjoseph/SafeFinder/assets/130880116/21e37f82-5a63-41bf-95e2-64b2f891dd04)
+![Screenshot 2024-06-11 194320](https://github.com/alatjoseph/SafeFinder/assets/130880116/81cf82ca-ff41-40ac-8af2-d3be2a06c3f4)
+
 
 *Alert for the user for not match*
 
