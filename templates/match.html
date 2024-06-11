@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Child Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global reset and basic styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headings */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Message box */
+        .message {
+            background-color: #d33c16;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Detail items */
+        .detail-item {
+            margin-bottom: 10px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        /* Go back button */
+        .btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #388e3c;
+        }
+        ul {
+            list-style-type: none; /* Remove bullets */
+            font-family: Arial, sans-serif; /* Set font family */
+            font-size: 16px; /* Set font size */
+            color: #333; /* Set text color */
+            font-weight: bold; /* Make text bold */
+        }
+        /* Style for li elements */
+        li {
+            margin-bottom: 15px; 
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Child is Missing </h1>
+        <div class="message">
+            <h2><i class="fas fa-exclamation-triangle"></i> URGENT: This child is missing!</h2>
+            <p>If you have any information or have seen this child, please contact the authorities immediately.</p>
+            <p>We appreciate your help in reuniting this child with their family.</p>
+            <p>We will also contact you shortly for any further assistance.</p>
+        </div>
+
+        <ul>
+            {% for row in data %}
+                {% if row[8] is defined %}
+                    <li>Name: {{ row[8] }}</li>
+                {% else %}
+                    <li>No name available</li>
+                {% endif %}
+                {% if row[12] is defined %}
+                    <li>Address: {{ row[12] }}</li>
+                {% else %}
+                    <li>No address available</li>
+                {% endif %}
+                {% if row[13] is defined %}
+                    <li>Parent Name: {{ row[13] }}</li>
+                {% else %}
+                    <li>No parent name available</li>
+                {% endif %}
+                {% if row[14] is defined %}
+                    <li>Parent Number: {{ row[14] }}</li>
+                {% else %}
+                    <li>No parent number available</li>
+                {% endif %}
+
+                {% if row[15] is defined %}
+                    <li>Police station: {{ row[15] }}</li>
+                {% else %}
+                    <li>No police station available</li>
+                {% endif %}
+                
+                {% if row[16] is defined %}
+                    <li>Police Station Number: {{ row[16] }}</li>
+                {% else %}
+                    <li>No Station number available</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <!-- <div class="detail-item">
+            <span class="detail-label">Name:</span> <span id="child-name">{{ name }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Age:</span> <span id="child-age">{{ address }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Height:</span> <span id="child-height">{{ parent_name }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Gender:</span> <span id="child-gender">{{ parent_num }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Address:</span> <span id="child-address"></span>
+        </div> -->
+        <!-- Add more detail items as needed -->
+        <a href="#" class="btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
+
+    <script>
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+
+        // // Populate child details from JavaScript
+
+
+        // document.getElementById("child-name").innerText = name
+        // document.getElementById("child-address").innerText =address;
+    </script>
+</body>
+</html>

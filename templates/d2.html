@@ -1,0 +1,297 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .person-img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Display Data</h1>
+    <div id="data-container">
+        <p>Admin Data:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Height</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Parent's Name</th>
+                    <th>Pic</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td><img src="/static/user_img/{{row[7]}}" alt="Photo 1" class="person-img"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+    <style>
+        /* Your CSS styles here */
+        #personDetails {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .person-img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        .person-img2 {
+            max-width: 300px;
+            max-height: 300px;
+            position: absolute;
+
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            /* Horizontally center the images */
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            /* Adjust the width as needed */
+            height: 200px;
+            /* Set height equal to width */
+            object-fit: cover;
+            /* Ensure the image covers the entire container */
+            border-radius: 10px;
+            /* Rounded corners */
+            margin: 0 10px;
+            /* Add space between images */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #079726;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        #closeBtn {
+            display: inline-block;
+            width: 120px;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #closeBtn:hover {
+            background-color: #45a049;
+        }
+
+        header {
+            background-color: #079726;
+            color: white;
+            text-align: center;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Matched Childrens Details</h1>
+    </header>
+    <h2>MISSING CHILD DETAILS</h2>
+    <ul>
+        {% for row in match_data %}
+        <li>
+            <div class="image-container">
+                <img src="/static/admin_img/{{ row[17] }}" alt="Photo 1" class="person-img">
+                <img src="/static/admin_img/{{row[18] }}" alt="Photo 2" class="person-img">
+                <img src="/static/admin_img/{{ row[19] }}" alt="Photo 3" class="person-img">
+            </div>
+            <table>
+                <tr>
+                    <th>Name of the Child</th>
+                    <td>{{ row[8] }}</td>
+                </tr>
+                <tr>
+                    <th>Age</th>
+                    <td>{{ row[9] }}</td>
+                </tr>
+                <tr>
+                    <th>Height</th>
+                    <td>{{ row[10] }}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>{{ row[11] }}</td>
+                </tr>
+                <tr>
+                    <th>Address</Address></th>
+                    <td>{{ row[12] }}</td>
+                </tr>
+                <tr>
+                    <th>Name of Parent</th>
+                    <td>{{ row[13] }}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number of Parent</th>
+                    <td>{{ row[14] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Name of Reported Police Station</th>
+                    <td>{{ row[15] }}</td>
+                </tr>
+
+                <tr>
+                    <th>Number of the Reported Police Station</th>
+                    <td>{{ row[16] }}</td>
+                </tr>
+                <tr>
+            </table>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>MATCH DETAILS AND USER DETAILS</h2>
+    <ul>
+        {% for row in match_data %}
+        <li>
+            <div class="image-container">
+                <img src="/static/user_img/{{ row[7] }}" alt="Photo 1" class="person-img">
+
+            </div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ row[1] }}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number</th>
+                    <td>{{ row[2] }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ row[3] }}</td>
+                </tr>
+                <tr>
+                    <th>Nearest Police Station</th>
+                    <td>{{ row[4] }}</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>{{ row[5] }}</td>
+                </tr>
+                <tr>
+                    <th>Location where child spotted</th>
+                    <td>{{ row[6] }}</td>
+                </tr>
+                
+            </table>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <script>
+        document.getElementById('closeBtn').addEventListener('click', function () {
+            history.back();
+        });
+    </script>
+</body>
+
+</html>

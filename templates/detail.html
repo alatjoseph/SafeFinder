@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Details</title>
+    <style>
+        /* Your CSS styles here */
+        #personDetails {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            /* Horizontally center the images */
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 200px;
+            /* Adjust the width as needed */
+            height: 200px;
+            /* Set height equal to width */
+            object-fit: cover;
+            /* Ensure the image covers the entire container */
+            border-radius: 10px;
+            /* Rounded corners */
+            margin: 0 10px;
+            /* Add space between images */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #079726;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        #closeBtn {
+            display: inline-block;
+            width: 120px;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #closeBtn:hover {
+            background-color: #45a049;
+        }
+
+        header {
+            background-color: #079726;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            /* Adjust the top and bottom padding */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Person Details</h1>
+    </header>
+
+    <ul>
+        {% for row in data %}
+        <!-- <li>{{ row }}</li> -->
+        <div id="personDetails">
+
+            <div class="image-container">
+                <img src="/static/admin_img/{{ row[10] }}" alt="Photo 1" class="person-img">
+                <img src="/static/admin_img/{{row[11] }}" alt="Photo 2" class="person-img">
+                <img src="/static/admin_img/{{ row[12] }}" alt="Photo 3" class="person-img">
+            </div>
+
+            <table>
+                <tr>
+                    <th>Name:</th>
+                    <td>{{ row[1] }}</td>
+                </tr>
+                <tr>
+                    <th>Age:</th>
+                    <td>{{ row[2] }}</td>
+                </tr>
+                <tr>
+                    <th>Height:</th>
+                    <td>{{ row[3] }}</td>
+                </tr>
+                <tr>
+                    <th>Gender:</th>
+                    <td>{{ row[4] }}</td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td>{{ row[5] }}</td>
+                </tr>
+                <tr>
+                    <th>Name of Parent:</th>
+                    <td>{{ row[6] }}</td>
+                </tr>
+                <tr>
+                    <th>Phone Number:</th>
+                    <td>{{ row[7] }}</td>
+                </tr>
+            </table>
+            <button id="closeBtn">Close</button>
+        </div>
+
+        {% endfor %}
+    </ul>
+
+
+    <script>
+        document.getElementById('closeBtn').addEventListener('click', function () {
+            history.back();
+        });
+    </script>
+</body>
+
+</html>

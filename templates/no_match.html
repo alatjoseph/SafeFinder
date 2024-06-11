@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Tribute</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global reset and basic styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headings */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Message box */
+        .message {
+            background-color: #388e3c;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Tribute section */
+        .tribute {
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tribute h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .tribute p {
+            margin-bottom: 10px;
+        }
+
+        /* Go back button */
+        .btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #388e3c;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Not Missing</h1>
+        <div class="message">
+            <h2><i class="fas fa-exclamation-triangle"></i> This child is not registered as missing!</h2>
+            <p>Even though this child is not registered as missing, we appreciate your commitment and concern.</p>
+        </div>
+        <div class="tribute">
+            <h2>A Token of Appreciation</h2>
+            <p>Thank you for taking the time to upload the image and checking whether the child is missing or not. Your effort and concern are highly appreciated.</p>
+            <p>We encourage you to continue supporting causes like these and making a positive impact in your community.</p>
+        </div>
+        <a href="#" class="btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Go Back</a>
+    </div>
+
+    <script>
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
